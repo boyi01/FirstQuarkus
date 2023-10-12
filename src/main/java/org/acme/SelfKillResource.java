@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.jboss.logging.Logger;
-import org.jboss.resteasy.resteasy_jaxrs.i18n.LogMessages_.logger;
+
 
 @Path("/selfkill")
 public class SelfKillResource {
