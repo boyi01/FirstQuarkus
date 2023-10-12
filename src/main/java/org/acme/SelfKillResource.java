@@ -17,8 +17,11 @@ public class SelfKillResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         LOG.info("Pod will dye now");
-        System.exit(0);
-        return "Hello RESTEasyasasdasdasdd";
+        int i = 0;
+        while(true){
+            i++;
+        }
+      
     }
 }
 
