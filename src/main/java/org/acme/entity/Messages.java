@@ -12,12 +12,8 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name = "message")
 public class Messages extends PanacheEntity {
     
-    @Id
-    public int id;
     public String message;
 
-    public static Messages findbyId(int id){
-        return find("id",id).firstResult();
-    }
+
 
 }
