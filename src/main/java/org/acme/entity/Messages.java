@@ -13,10 +13,18 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name = "message")
 public class Messages extends PanacheEntity {
     
-    public String message;
+    private String message;
 
     public static List<Messages> findAllMessages(){
         return listAll();
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
 }

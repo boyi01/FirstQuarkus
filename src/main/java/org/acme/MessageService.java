@@ -14,7 +14,6 @@ import org.acme.entity.Messages;
 import org.jboss.logging.Logger;
 
 @Path("/message")
-@Transactional
 public class MessageService {
 
     private static final Logger LOG = Logger.getLogger(MessageService.class);
@@ -24,16 +23,17 @@ public class MessageService {
     public String message() {
         List<Messages> messages = Messages.findAllMessages();
         
-        String stringMessage = messages.stream().map(Object::toString)
+        String stringMessage = messages.stream().map(Messages::getMessage)
                        .collect(Collectors.joining(", "));
         return stringMessage;
     }
 
     @POST
+    @Transactional
     public void hello(String message){
 
         Messages messages = new Messages();
-        messages.message = message;
+        messages.setMessage(message);
         messages.persist();
     }
 }
