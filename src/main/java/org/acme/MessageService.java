@@ -3,6 +3,7 @@ package org.acme;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -13,9 +14,10 @@ import org.acme.entity.Messages;
 import org.jboss.logging.Logger;
 
 @Path("/message")
+@Transactional
 public class MessageService {
 
-    private static final Logger LOG = Logger.getLogger(SelfKillResource.class);
+    private static final Logger LOG = Logger.getLogger(MessageService.class);
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
