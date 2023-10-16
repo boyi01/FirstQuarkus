@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 import org.acme.entity.Messages;
 import org.jboss.logging.Logger;
 
-@Path("/")
+@Path("/message")
 public class MessageService {
 
     private static final Logger LOG = Logger.getLogger(MessageService.class);
