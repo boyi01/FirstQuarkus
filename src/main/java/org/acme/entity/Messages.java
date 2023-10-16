@@ -18,6 +18,10 @@ public class Messages extends PanacheEntity {
         return listAll();
     }
 
+    public static void deleteAllMessages(){
+        deleteAll();
+    }
+
     public String getMessage() {
         return this.message;
     }
@@ -25,5 +29,7 @@ public class Messages extends PanacheEntity {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    
 
 }

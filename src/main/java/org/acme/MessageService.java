@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -35,5 +36,11 @@ public class MessageService {
         Messages messages = new Messages();
         messages.setMessage(message);
         messages.persist();
+    }
+
+    @DELETE
+    @Transactional
+    public void reset(){
+        Messages.deleteAllMessages();
     }
 }
