@@ -26,6 +26,7 @@ public class MessageService {
         
         String stringMessage = messages.stream().map(Messages::getMessage)
                        .collect(Collectors.joining(", "));
+        LOG.info("Send the Messages");
         return stringMessage;
     }
 
@@ -34,8 +35,13 @@ public class MessageService {
     public void hello(String message){
 
         Messages messages = new Messages();
-        messages.setMessage(message);
-        messages.persist();
+        if (!message.isBlank()){
+            messages.setMessage(message);
+            messages.persist();
+        } else {
+            LOG.info("receoved empty message");
+        }
+        
     }
 
     @DELETE
