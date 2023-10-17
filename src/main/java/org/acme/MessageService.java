@@ -3,6 +3,7 @@ package org.acme;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -16,7 +17,7 @@ import org.acme.entity.Messages;
 import org.jboss.logging.Logger;
 
 import com.arjuna.ats.jta.exceptions.NotImplementedException;
-import com.oracle.svm.core.annotate.Inject;
+
 
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Tags;
