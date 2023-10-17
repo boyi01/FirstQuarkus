@@ -20,7 +20,6 @@ import com.oracle.svm.core.annotate.Inject;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Tags;
-import io.quarkus.runtime.util.StringUtil;
 
 
 
