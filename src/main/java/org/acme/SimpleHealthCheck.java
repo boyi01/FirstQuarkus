@@ -11,7 +11,7 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped  
 public class SimpleHealthCheck implements HealthCheck {
 
-    int counter;
+    int counter = 0;
     @Override
     public HealthCheckResponse call() {
 
